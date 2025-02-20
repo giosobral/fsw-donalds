@@ -14,7 +14,7 @@ interface ProductHeaderProps {
 const ProductHeader = ({ product }: ProductHeaderProps) => {
   const { back } = useRouter();
   return (
-    <div className="relative h-[300px] w-full bg-orange-50">
+    <div className="relative min-h-[300px] w-full bg-orange-50">
       <Button
         variant="secondary"
         size="icon"
