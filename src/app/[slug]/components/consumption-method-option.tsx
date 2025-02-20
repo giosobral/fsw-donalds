@@ -10,6 +10,7 @@ interface ConsumptionMethodOptionProps {
   imageAlt: string;
   buttonText: string;
   option: ConsumptionMethod;
+  slug: string;
 }
 
 const ConsumptionMethodOption = ({
@@ -17,6 +18,7 @@ const ConsumptionMethodOption = ({
   imageAlt,
   buttonText,
   option,
+  slug,
 }: ConsumptionMethodOptionProps) => {
   return (
     <Card>
@@ -30,8 +32,10 @@ const ConsumptionMethodOption = ({
           />
         </div>
 
-        <Button variant="secondary" className="rounded-full">
-          <Link href={`/menu?consumptionMethod=${option}`}>{buttonText}</Link>
+        <Button variant="secondary" className="rounded-full" asChild>
+          <Link href={`/${slug}/menu?consumptionMethod=${option}`}>
+            {buttonText}
+          </Link>
         </Button>
       </CardContent>
     </Card>
