@@ -11,7 +11,7 @@ import {
 import { CartContext } from "../contexts/carts";
 
 const CartSheet = () => {
-  const { isOpen, toogleCart } = useContext(CartContext);
+  const { isOpen, toogleCart, products } = useContext(CartContext);
   return (
     <Sheet open={isOpen} onOpenChange={toogleCart}>
       <SheetContent>
@@ -22,6 +22,13 @@ const CartSheet = () => {
             account and remove your data from our servers.
           </SheetDescription>
         </SheetHeader>
+        {products.map((product) => (
+          <div key={product.id}>
+            <p>{product.name}</p>
+            <p>{product.price}</p>
+            <p>{product.quantity}</p>
+          </div>
+        ))}
       </SheetContent>
     </Sheet>
   );
