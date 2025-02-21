@@ -21,7 +21,7 @@ export const CartContext = createContext<ICartContext>({
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [products, setProducts] = useState<CartProduct[]>([]);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const toogleCart = () => {
     setIsOpen(!isOpen);
