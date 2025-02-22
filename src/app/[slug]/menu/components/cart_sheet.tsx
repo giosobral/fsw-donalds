@@ -3,32 +3,26 @@ import { useContext } from "react";
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
 
 import { CartContext } from "../contexts/carts";
+import CartItem from "./cart_product";
 
 const CartSheet = () => {
   const { isOpen, toogleCart, products } = useContext(CartContext);
   return (
     <Sheet open={isOpen} onOpenChange={toogleCart}>
-      <SheetContent>
+      <SheetContent className="w-[80%]">
         <SheetHeader>
-          <SheetTitle>Are you absolutely sure?</SheetTitle>
-          <SheetDescription>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
-          </SheetDescription>
+          <SheetTitle className="text-left">Sacola</SheetTitle>
         </SheetHeader>
-        {products.map((product) => (
-          <div key={product.id}>
-            <p>{product.name}</p>
-            <p>{product.price}</p>
-            <p>{product.quantity}</p>
-          </div>
-        ))}
+        <div className="py-5">
+          {products.map((product) => (
+            <CartItem key={product.id} product={product} />
+          ))}
+        </div>
       </SheetContent>
     </Sheet>
   );
