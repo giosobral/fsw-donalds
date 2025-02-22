@@ -38,7 +38,7 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
     setQuantity((prev) => prev + 1);
   };
 
-  if (quantity == 0) {
+  if (quantity === 0) {
     setQuantity(1);
   }
 
