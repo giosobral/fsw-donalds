@@ -40,6 +40,18 @@ const getStatusLabel = (status: OrderStatus) => {
   }
 };
 
+const statusLabelVerify = (status: OrderStatus) => {
+  if (status === OrderStatus.FINISHED) {
+    return "bg-green-500 text-white";
+  }
+  if (status === OrderStatus.PENDING) {
+    return "bg-gray-200 text-gray-600";
+  }
+  if (status === OrderStatus.IN_PREPARATION) {
+    return "bg-orange-500 text-white";
+  }
+};
+
 const OrderList = ({ orders }: OrderListProps) => {
   return (
     <div className="space-y-6 p-6">
@@ -54,7 +66,7 @@ const OrderList = ({ orders }: OrderListProps) => {
         <Card key={order.id}>
           <CardContent className="space-y-4 p-5">
             <div
-              className={`w-fit rounded-full px-2 py-1 text-xs font-semibold text-white ${order.status === OrderStatus.FINISHED ? "bg-green-500 text-white" : "bg-gray-200 text-gray-600"} `}
+              className={`w-fit rounded-full px-2 py-1 text-xs font-semibold text-white ${statusLabelVerify(order.status)} `}
             >
               {getStatusLabel(order.status)}
             </div>
