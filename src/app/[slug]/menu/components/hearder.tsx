@@ -8,7 +8,7 @@ import { useParams, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 
 interface RestaurantHeaderProps {
-  restaurant: Pick<Restaurant, "coverImageUrl" | "name" | "slug">;
+  restaurant: Pick<Restaurant, "coverImageUrl" | "name">;
 }
 
 const RestaurantHeader = ({ restaurant }: RestaurantHeaderProps) => {
