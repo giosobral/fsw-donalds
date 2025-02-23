@@ -41,7 +41,7 @@ const CartSheet = () => {
             className="w-full rounded-full"
             onClick={() => setFinishOrderDialogIsOpen(true)}
           >
-            Finalizar Pedido
+            Realizar Pedido
           </Button>
           <FinishOrderDialog
             open={finishOrderDialogIsOpen}
