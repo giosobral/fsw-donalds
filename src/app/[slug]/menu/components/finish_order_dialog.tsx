@@ -97,7 +97,7 @@ const FinishOrderDialog = ({ open, onOpenChange }: FinishOrderDialogProps) => {
       <DrawerTrigger asChild></DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
-          <DrawerTitle>Realizar Pedido</DrawerTitle>
+          <DrawerTitle>Quase Lá...</DrawerTitle>
           <DrawerDescription>
             Insira suas informações abaixo para finalizar o pedido
           </DrawerDescription>
